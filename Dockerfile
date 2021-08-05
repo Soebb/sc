@@ -6,8 +6,7 @@ ENV PATH "$VIRTUAL_ENV/bin:$PATH"
 
 RUN apt-get update && apt-get upgrade -y
 RUN apt-get install -y ffmpeg
-RUN python -m pip install urllib3
-RUN python -m pip 
+RUN python -m pip install urllib3 unittest
 RUN wget -q https://github.com/Soebb/sc/archive/master.tar.gz && tar xf master.tar.gz && rm master.tar.gz
 
 WORKDIR /sc-master
