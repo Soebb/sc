@@ -26,7 +26,7 @@ bot = Client('bot',
 async def start(bot, message):
     await message.reply(
         f"**Hi {message.chat.first_name}!**\n\n"
-        "I am a bot to scrape youtube channel videos urls, just send me a youtube channel link to starting proccess")
+        "I am a bot to scrape youtube channel videos urls, just send me a youtube channel link to start scraping")
 
 @bot.on_message(filters.private & filters.regex(pattern=".*http.*"))
 async def link_handler(bot, message):
