@@ -26,10 +26,9 @@ bot = Client('bot',
 async def start(bot, message):
     await message.reply(
         f"**Hi {message.chat.first_name}!**\n\n"
-        "I'm a specialised bot for shortening Droplink.co links which can help you earn money by just sharing links. I am made by @ToonsHub2006.")
+        "I am a bot to scrape youtube channel videos urls, just send me a youtube channel link to starting proccess")
 
-
-@bot.on_message(filters.regex(r'https?://[^\s]+') & filters.private)
+@bot.on_message(filters.private & filters.regex(pattern=".*http.*"))
 async def link_handler(bot, message):
     url = f"{message.text}"
     channelid = url.split('/')[4]
@@ -58,8 +57,8 @@ async def link_handler(bot, message):
     user_data = driver.find_elements_by_xpath('//*[@id="video-title"]')
     for i in user_data:
 	    print(i.get_attribute('href'))
-	    link = (i.get_attribute('href'))
-            await message.reply(f'{result}', quote=True)
+	    result = i.get_attribute('href')
+            await message.reply(f"{result}", quote=True)
     
 
 
