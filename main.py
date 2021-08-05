@@ -1,6 +1,6 @@
 #_*_coding: utf-8_*_
 
-import sys, unittest, time, datetime
+import os, unittest, time, datetime
 import urllib.request, urllib.error, urllib.parse
 from selenium import webdriver
 from selenium.webdriver.common.by import By
@@ -9,12 +9,18 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import InvalidArgumentException
 from selenium.webdriver.chrome.options import Options
 
+
+
 url = sys.argv[1]
 channelid = url.split('/')[4]
 #driver=webdriver.Firefox()
 chrome_options = Options()
 chrome_options.add_argument("--user-data-dir=chrome-data")
-driver = webdriver.Chrome('chromedriver',options=chrome_options)
+chrome_options.add_argument("--headless")
+chrome_options.add_argument("--disable-dev-shm-usage")
+chrome_options.add_argument("--no-sandbox")
+chrome_options.binary_location = "/app/.apt/usr/bin/google-chrome"
+driver = webdriver.Chrome(executable_path="/app/.chromedriver/bin/chromedriver", options=chrome_options)
 driver.get(url)
 time.sleep(5)
 dt=datetime.datetime.now().strftime("%Y%m%d%H%M")
