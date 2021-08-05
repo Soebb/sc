@@ -1,4 +1,3 @@
-# scrape-youtube-channel-videos-url.py
 #_*_coding: utf-8_*_
 
 import sys, unittest, time, datetime
