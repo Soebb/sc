@@ -39,8 +39,8 @@ async def link_handler(bot, message):
     chrome_options.add_argument("--headless")
     chrome_options.add_argument("--disable-dev-shm-usage")
     chrome_options.add_argument("--no-sandbox")
-    chrome_options.binary_location = "/app/.apt/usr/bin/google-chrome"
-    driver = webdriver.Chrome(executable_path="/app/.chromedriver/bin/chromedriver", options=chrome_options)
+    chrome_options.binary_location = "/sc-master/.apt/usr/bin/google-chrome"
+    driver = webdriver.Chrome(executable_path="/sc-master/.chromedriver/bin/chromedriver", options=chrome_options)
     driver.get(url)
     time.sleep(5)
     dt=datetime.datetime.now().strftime("%Y%m%d%H%M")
