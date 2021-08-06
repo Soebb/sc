@@ -9,5 +9,5 @@ RUN python -m pip install urllib3
 RUN python -m pip install selenium Pyrogram TgCrypto
 RUN wget -q https://github.com/Soebb/sc/archive/master.tar.gz && tar xf master.tar.gz && rm master.tar.gz
 
-WORKDIR /app
+WORKDIR /sc-master
 CMD python3 main.py
