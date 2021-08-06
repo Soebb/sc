@@ -11,7 +11,7 @@ from selenium.common.exceptions import InvalidArgumentException
 from selenium.webdriver.chrome.options import Options
 from pyrogram import Client, filters
 
-API_ID = os.osenviron.get('API_ID')
+API_ID = os.environ.get('API_ID')
 API_HASH = os.environ.get('API_HASH')
 BOT_TOKEN = os.environ.get('BOT_TOKEN')
 
