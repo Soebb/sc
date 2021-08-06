@@ -59,7 +59,7 @@ async def link_handler(bot, message):
     for i in user_data:
 	    print(i.get_attribute('href'))
 	    result = i.get_attribute('href')
-            await message.reply(f"{result}", quote=True)
+            await message.reply(f"{result}")
     
 
 
