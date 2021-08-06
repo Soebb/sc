@@ -48,20 +48,20 @@ async def link_handler(bot, message):
     lastheight = 0
 
     while True:
-	    if lastheight == height:
-		    break
-	    lastheight = height
-	    driver.execute_script("window.scrollTo(0, " + str(height) + ");")
-	    time.sleep(2)
-	    height = driver.execute_script("return document.documentElement.scrollHeight")
+        if lastheight == height:
+            break
+        lastheight = height
+        driver.execute_script("window.scrollTo(0, " + str(height) + ");")
+        time.sleep(2)
+        height = driver.execute_script("return document.documentElement.scrollHeight")
 
     user_data = driver.find_elements_by_xpath('//*[@id="video-title"]')
     for i in user_data:
-	    print(i.get_attribute('href'))
-	    input = i.get_attribute('href')
-            result = f"{input}"
-            await message.reply(result)
-
+        print(i.get_attribute('href'))
+        input = i.get_attribute('href')
+        result = f"{input}"
+        await message.reply(result)
+    
 
 
 bot.run()
