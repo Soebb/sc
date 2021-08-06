@@ -58,9 +58,9 @@ async def link_handler(bot, message):
     user_data = driver.find_elements_by_xpath('//*[@id="video-title"]')
     for i in user_data:
 	    print(i.get_attribute('href'))
-	    result = i.get_attribute('href')
-            await message.reply(f"{result}")
-    
+	    input = i.get_attribute('href')
+            result = f"{input}"
+            await message.reply(result)
 
 
 
